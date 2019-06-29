@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - "lts/*"
   - "node"
-script: npm run ci
+script: npm run build
 
 stages:
   - test
@@ -15,12 +15,12 @@ jobs:
     - stage: publish
       node_js: node
       script:
-        - npm ci
+        - npm build
         - git remote set-url origin https://${GITHUB_TOKEN}@github.com/CodeRevolver/react-components.git
         - git checkout ${TRAVIS_BRANCH}
         - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-        - npx lerna publish --conventional-commits --changelog-preset eslint --yes
-        - sh rebuild-docs.sh
+        - npm publish --access public
+        - npm run styleguide:build
       deploy:
         - provider: pages
           skip-cleanup: true
