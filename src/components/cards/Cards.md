@@ -1,0 +1,1 @@
+Cards are self contained singular components that can be added to a page.
