@@ -1,3 +1,1 @@
-```
-npm install --save-dev @coderevolver/react-components
-```
+`npm install --save-dev @coderevolver/react-components`
