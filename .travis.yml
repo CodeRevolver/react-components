@@ -15,7 +15,6 @@ jobs:
         - git remote set-url origin https://${GITHUB_TOKEN}@github.com/CodeRevolver/react-components.git
         - git checkout ${TRAVIS_BRANCH}
         - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-        - npm publish --access public
         - npm run styleguide:build
       deploy:
         - provider: pages
