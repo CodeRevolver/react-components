@@ -1,8 +1,5 @@
 if: tag IS blank
 language: node_js
-node_js:
-  - "lts/*"
-  - "node"
 script: npm run build
 
 stages:
